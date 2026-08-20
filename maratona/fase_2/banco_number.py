@@ -78,30 +78,3 @@ print(distancia)
 #     EXIBIR mapa_de_distancia
 
 # FIM
-
-from collections import deque
-
-grafo = {
-    "A": ["B", "C"],
-    "B": ["A", "D"],
-    "C": ["A", "E"],
-    "D": ["B"],
-    "E": ["C"]
-}
-
-fila = deque(["A"])
-
-distancia = {
-    "A": 0
-}
-
-while fila:
-    atual = fila.popleft()
-
-    for vizinho in grafo[atual]:
-
-        if vizinho not in distancia:
-            distancia[vizinho] = distancia[atual] + 1
-            fila.append(vizinho)
-
-print(distancia)
